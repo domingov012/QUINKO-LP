@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: #242424;
+
+  --scroll-percent: 0;
+  --primary-color: #4348bd;
+  --secondary-color: #5257ce;
+  --aux-color: rgb(53, 56, 146);
+  /* --navbar-color: rgba(67, 72, 189, calc((10 * var(--scroll-percent)) / 100)); */
+  --navbar-color: rgb(67, 72, 189);
+  --navbar-color: rgba(67, 72, 189, 0);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  z-index: 1000;
+  /* transition: background-color ease 0.5s; */
+}
+
+/* nav:hover {
+  background-color: var(--primary-color);
+} */
+
+.nav-button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: transparent;
+  transition: border-color ease 0.5s;
+  padding: 10px 15px;
+}
+
+.nav-button:hover {
+  border-color: #fff;
+}
+
+.full-section {
+  height: 100vh;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.overlap-animation {
+  /* transform: translateY(calc(100 - var(--scroll-percent))); */
+  transform: translateY(100vh);
+}
+
+/* .go-up-animation {
+  transform: translateY(calc(-100vh + var(--scroll-percent)));
+} */
+
+.minimize-animation {
+  width: max(36vw, min(calc(100% - 1% * var(--scroll-percent) + 10%), 100%));
+  /* transform: translateX(
+    calc(-1 * (max(100, var(--scroll-percent)) * 1% - 100%))
+  ); */
+}
+
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.anaheim-primary {
+  font-family: "Anaheim", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.img-1 {
+  top: 0;
+  background-image: url(/fondo_principal.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button-1 {
+  background-color: var(--primary-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color ease 0.5s;
+}
+
+.button-1:hover {
+  background-color: var(--aux-color);
+}
+
+.text-paragraph {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.logo-container {
+  width: 30%;
+  border-radius: 200px;
+}
+
+.wsp-link {
+  font-size: 24px;
+  color: rgb(0, 197, 0);
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.wsp-link:hover {
+  border: 2px solid rgb(0, 197, 0);
+}
+
+.example-1 {
+  background-image: url(/quincho_ejemplo_1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.example-2 {
+  background-image: url(/quincho_ejemplo_2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.example-3 {
+  background-image: url(/fondo_principal.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* style the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+/*  SLIDESHOW CSS  */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  border: 7px solid #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
